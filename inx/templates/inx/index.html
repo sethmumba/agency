@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpxAutomations</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    
+    <header>
+        <div class="word-section">
+            <div class="title"><h1>Automate. Scale Dominate</h1><br>
+</div>
+            <div class="sub-title"><h4>EmpxAutomations helps business streamline operations, boost sales, and save time through intelligent automation and expert virtual assistance</h4><br></div>
+            <div class="header-buttons"><button>Get started</button>
+            <button>Book a Free Consultation</button></div>
+        </div>
+        <div class="header-image"><img src="https://res.cloudinary.com/djxeu9bfh/image/upload/v1760994664/empx_logo-removebg-preview_j7fmrv.png" alt="EmpxAutomations"></div>
+    </header>
+
+    <section>
+       {% if portfolio %}
+       {% for p in portfolio %}
+       <div class="portfolio-item">
+        {%  if p.image %}
+        <img src="{{p.image.url}}" alt="{{p.title}}" class="portfolio-image">
+        {% endif %}
+        <h2 class="portfolio-title">{{p.title}}</h2>
+        <p class="portfolio-description">{{p.description}}</p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div>Updating Soon</div>
+        {% endif %}
+       
+    </section>
+
+    <footer>
+        <h1>
+            Smart systems. Human Precision
+        </h1>
+        <p>Empx Automations empowers business to run smoother, faster and smarter</p>
+        <button>Lets build together</button>
+    </footer>
+</body>
+</html>
