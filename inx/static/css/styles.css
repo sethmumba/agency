@@ -161,4 +161,55 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-  
+  /* === Navigation Bar === */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 10%;
+  background: rgba(3, 8, 35, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.2);
+}
+
+.navigation .logo img {
+  height: 60px;
+  filter: drop-shadow(0 0 10px #00b4ff);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00b4ff, #ffd700);
+  transition: width 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffd700;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
